@@ -1,0 +1,7 @@
+# Seuls les points d'entrée publics sont accessibles depuis le web.
+# config.php (mots de passe), lib/, vendor/ et data/ (ventes) restent privés :
+# ils ne sont lisibles que par PHP et par FTP.
+Options -Indexes
+<FilesMatch "^(?!(reserve|disponibilites|ventes|controle|vente-sur-place|billets)\.php$).*">
+  Require all denied
+</FilesMatch>
